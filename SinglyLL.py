@@ -70,26 +70,51 @@ class SinglyLinkedList:
 
 obj = SinglyLinkedList()
 
-obj.insert_at_beginning(4)
-obj.insert_at_beginning(3)
-obj.insert_at_beginning(2)
-obj.insert_at_beginning(1)
-
 print("Initial linked list:")
 obj.traverse()
 
+print("Linked list after inserting at the beginning: 4")
+obj.insert_at_beginning(4)
+obj.traverse()
+
+print("Linked list after inserting at the beginning: 3")
+obj.insert_at_beginning(3)
+obj.traverse()
+
+print("Linked list after inserting at the beginning: 2")
+obj.insert_at_beginning(2)
+obj.traverse()
+
+print("Linked list after inserting at the beginning: 1")
+obj.insert_at_beginning(1)
+obj.traverse()
+
+print("Linked list after inserting at the end: 6")
 obj.insert_at_end(6)
+obj.traverse()
+
+print("Linked list after inserting at the end: 7")
 obj.insert_at_end(7)
-print("Linked list after inserting at the end:")
 obj.traverse()
 
+
+print("Linked list after inserting after specific elements: 4 ->5")
 obj.insert_after_element(4, 5)
-obj.insert_after_element(7, 8)
-print("Linked list after inserting after specific elements:")
 obj.traverse()
 
-obj.delete_element(1) # delete first element
-obj.delete_element(5) # delete middle element
-obj.delete_element(8) # delete last element
-print("Linked list after deleting elements:")
+print("Linked list after inserting after specific elements: 7 ->8")
+obj.insert_after_element(7, 8)
 obj.traverse()
+
+print("Linked list after deleting first element")
+obj.delete_element(1) # delete first element
+obj.traverse()
+
+print("Linked list after deleting middle element")
+obj.delete_element(5) # delete middle element
+obj.traverse()
+
+print("Linked list after deleting last element")
+obj.delete_element(8) # delete last element
+obj.traverse()
+
