@@ -29,6 +29,7 @@ class Node:
         self.data = data
         self.next = None
 
+
 class SinglyLinkedList:
     def __init__(self):
         self.head = None
@@ -40,11 +41,11 @@ class SinglyLinkedList:
         if self.head is None:
             self.head = new_node
             return
-        else:
-            current = self.head
-            while current.next:
-                current = current.next
-            current.next = new_node
+
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
 
     """Insert at the Beginning of the List"""
     def insert_at_beginning(self, data):
@@ -71,13 +72,14 @@ class SinglyLinkedList:
         previous = None
         while current:
             if current.data == data:
-                if previous:
-                    previous.next = current.next
-                else:
+                if previous is None:
                     self.head = current.next
+                else:
+                    previous.next = current.next
                 return
             previous = current
             current = current.next
+        print("Element not found")
 
     """Print the Linked List"""
     def display(self):
@@ -86,7 +88,6 @@ class SinglyLinkedList:
             print(current.data, end=" -> ")
             current = current.next
         print("None")
-
 
 
 ll = SinglyLinkedList()
@@ -120,7 +121,6 @@ print("Insert after the last element")
 ll.insert_after(3, 4)
 ll.display()
 
-
 print("Delete the first element")
 ll.delete(-2)
 ll.display()
@@ -129,4 +129,7 @@ ll.delete(1)
 ll.display()
 print("Delete the last element")
 ll.delete(4)
+ll.display()
+print("Delete an element which doesn't exist")
+ll.delete(100)
 ll.display()
