@@ -4,6 +4,7 @@ class Node:
         self.next = None
         self.prev = None
 
+
 class CircularDoublyLinkedList:
     def __init__(self):
         self.head = None
@@ -46,6 +47,7 @@ class CircularDoublyLinkedList:
         if self.head is None:
             print("Linked List is empty")
             return
+
         current = self.head
         while True:
             if current.data == target_data:
@@ -60,7 +62,7 @@ class CircularDoublyLinkedList:
             current = current.next
             if current is self.head:
                 break
-        print("Target Data doesn't exist")
+        print("Element not found")
 
     def delete(self, target_data):
         # Case 1: If the list is empty
@@ -92,20 +94,21 @@ class CircularDoublyLinkedList:
         if self.head is None:
             print("Linked List is empty")
             return
+
         current = self.head
         while True:
             print(current.data, end=" <-> ")
             current = current.next
             if current is self.head:
                 break
-        print()
-
+        print("head")
 
     def check_circularity(self):
         ctr = 0
         if self.head is None:
             print("Linked List is empty")
             return
+
         current = self.head
         while True:
             print(current.data, end=" <-> ")
@@ -113,7 +116,7 @@ class CircularDoublyLinkedList:
             if ctr >= 20:
                 break
             ctr += 1
-        print("")
+        print("head")
 
 ll = CircularDoublyLinkedList()
 print("Initial LL")
@@ -157,5 +160,6 @@ ll.delete(4)
 ll.display()
 print("Delete an element which doesn't exist")
 ll.delete(10)
+ll.display()
 
 ll.check_circularity()
