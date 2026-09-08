@@ -4,6 +4,7 @@ class Node:
         self.next = None
         self.prev = None
 
+
 class DoublyLinkedList:
     def __init__(self):
         self.head = None
@@ -29,11 +30,13 @@ class DoublyLinkedList:
         if self.head is None:
             self.head = new_node
             return
+
         curr_node = self.head
         while curr_node.next:
             curr_node = curr_node.next
         curr_node.next = new_node
         new_node.prev = curr_node
+
     """ Insert after an element """
     """
     1. node.prev. = current
@@ -53,7 +56,7 @@ class DoublyLinkedList:
                 curr_node.next = new_node
                 return
             curr_node = curr_node.next
-        print("Item not found")
+        print("Element not found")
 
     """ Delete an item from the list """
     """
@@ -70,16 +73,16 @@ class DoublyLinkedList:
         curr_node = self.head
         while curr_node:
             if curr_node.data == data:
-                if curr_node.prev:
-                    curr_node.prev.next = curr_node.next
-                else:
+                if curr_node.prev is None:
                     self.head = curr_node.next
+                else:
+                    curr_node.prev.next = curr_node.next
+
                 if curr_node.next:
                     curr_node.next.prev = curr_node.prev
                 return
             curr_node = curr_node.next
-        print("*** Item not found ***")
-
+        print("Element not found")
 
     """Print the Linked List"""
     def display(self):
@@ -88,6 +91,7 @@ class DoublyLinkedList:
             print(current.data, end=" -> ")
             current = current.next
         print("None")
+
 
 ll = DoublyLinkedList()
 print("Initial LL")
@@ -108,8 +112,6 @@ ll.insert_at_beginning(-1)
 ll.display()
 ll.insert_at_beginning(-2)
 ll.display()
-
-
 
 print("Delete the first element")
 ll.delete(-2)
