@@ -12,14 +12,13 @@ class Stack:
 
     def push(self, item):
         if self.is_full():
-            print("*** Stack is full. Cannot push item.")
+            print("***Stack is full. Cannot push item.***")
         else:
             self.i += 1
             self.elements[self.i] = item
 
     def pop(self):
         if self.is_empty():
-            print("*** The stack is empty")
             return -1
         else:
             item = self.elements[self.i]
@@ -28,7 +27,6 @@ class Stack:
 
     def peek(self):
         if self.is_empty():
-            print("*** The stack is empty")
             return -1
         else:   
             return self.elements[self.i]
