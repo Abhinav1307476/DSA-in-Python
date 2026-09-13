@@ -14,21 +14,18 @@ class Deque:
 
     def removeFront(self):
         if self.is_empty():
-            print("*** The queue is empty")
             return
         else:
             return self.elements.pop(0)
     # add feature to remove an item from the rear of the deque
     def removeRear(self):
         if self.is_empty():
-            print("*** The queue is empty")
             return
         else:
             return self.elements.pop()
         
     def peek(self):
         if self.is_empty():
-            print("*** The queue is empty")
             return
         return self.elements[0]
 
