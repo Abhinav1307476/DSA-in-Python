@@ -10,13 +10,11 @@ class Queue:
 
     def dequeue(self):
         if self.is_empty():
-            print("*** The queue is empty")
             return
         else:
             return self.elements.pop(0)
     def peek(self):
         if self.is_empty():
-            print("*** The queue is empty")
             return
         return self.elements[0]
 
