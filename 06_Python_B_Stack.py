@@ -13,14 +13,12 @@ class Stack:
 
     def pop(self):
         if self.is_empty():
-            print("*** The stack is empty")
             return
         else:
             return self.elements.pop(0)
 
     def peek(self):
         if self.is_empty():
-            print("*** The stack is empty")
             return
         else:
             return self.elements[0]
