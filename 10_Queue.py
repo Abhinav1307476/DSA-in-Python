@@ -13,7 +13,8 @@ class Queue:
 
     def enqueue(self, item):
         if self.is_full():
-            return "Queue is full"
+            print("***Queue is full. Cannot enqueue item.***")
+            return
         self.rear = self.rear + 1
         self.items[self.rear] = item
         if self.front == -1:
