@@ -1,4 +1,4 @@
-class Front_Stack:
+class Stack:
     def __init__(self):
         self.max_size = 5  # Set the maximum size for this stack implementation
         self.elements = [None] * self.max_size  # Initialize the elements list with a fixed size
@@ -12,14 +12,13 @@ class Front_Stack:
 
     def push(self, item):
         if self.is_full():
-            print("*** Stack is full. Cannot push item.")
+            print("***Stack is full. Cannot push item.***")
         else:
             self.i += 1
             self.elements[self.i] = item
 
     def pop(self):
         if self.is_empty():
-            print("*** The stack is empty")
             return -1
         else:
             item = self.elements[self.i]
@@ -28,12 +27,11 @@ class Front_Stack:
 
     def peek(self):
         if self.is_empty():
-            print("*** The stack is empty")
             return -1
         else:   
             return self.elements[self.i]
 
-s = Front_Stack()
+s = Stack()
 print(f"Is the stack empty? {s.is_empty()}")
 print(f"Is the stack full? {s.is_full()}")
 
