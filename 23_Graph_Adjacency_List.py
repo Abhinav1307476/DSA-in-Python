@@ -1,0 +1,25 @@
+class Graph_Adjacency_List:
+    def __init__(self, vertices):
+        self.vertices = vertices
+        self.graph = {i: [] for i in range(vertices)}  # Initialize adjacency list as a dictionary
+
+    def add_edge(self, source, destination):
+        if source < 0 or source >= self.vertices or destination < 0 or destination >= self.vertices:
+            print("Source and destination must be valid vertex indices.")
+        else:
+            self.graph[source].append(destination)
+            # self.graph[destination].append(source)  # For undirected graph
+
+    def display(self):
+        for vertex, neighbors in self.graph.items():
+            print(f"{vertex}: {neighbors}")
+
+
+g = Graph_Adjacency_List(5)
+g.add_edge(0, 1)
+g.add_edge(0, 4)
+g.add_edge(1, 2)
+g.add_edge(1, 3)
+g.add_edge(1, 3)
+
+g.display()
