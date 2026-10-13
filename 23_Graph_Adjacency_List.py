@@ -7,8 +7,9 @@ class Graph_Adjacency_List:
         if source < 0 or source >= self.vertices or destination < 0 or destination >= self.vertices:
             print("Source and destination must be valid vertex indices.")
         else:
-            self.graph[source].append(destination)
-            # self.graph[destination].append(source)  # For undirected graph
+            if destination not in self.graph[source]:  # Avoid duplicate edges
+                self.graph[source].append(destination)
+                self.graph[destination].append(source)  # For undirected graph
 
     def display(self):
         for vertex, neighbors in self.graph.items():
